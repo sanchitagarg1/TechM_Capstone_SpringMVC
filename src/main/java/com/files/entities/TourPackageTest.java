@@ -11,7 +11,7 @@ public class TourPackageTest {
     @Test
     public void testTourPackageGettersAndSetters() {
         TourPackage tourPackage = new TourPackage();
-        
+
         tourPackage.setFromLocation("New York");
         tourPackage.setToLocation("Los Angeles");
         tourPackage.setHotelName("Holiday Inn");

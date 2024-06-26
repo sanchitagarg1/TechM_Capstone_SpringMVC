@@ -5,10 +5,24 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
- 
+  <!-- Context Loader Listener Configuration -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <!-- Dispatcher Servlet Configuration -->
   <servlet>
     <servlet-name>dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   
@@ -17,18 +31,9 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
- 
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
-  </context-param>
-
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-
+  <!-- Welcome File Configuration -->
   <welcome-file-list>
-    <welcome-file>/TechM_Capstone_SpringMVC/src/main/webapp/WEB-INF/views/Main.jsp</welcome-file>
+    <welcome-file>/WEB-INF/views/Main.jsp</welcome-file>
   </welcome-file-list>
   
 </web-app>

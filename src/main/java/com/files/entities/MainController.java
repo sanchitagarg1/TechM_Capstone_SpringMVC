@@ -1,4 +1,4 @@
-package com.files.controller;
+package com.files.entities;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,6 +22,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,14 +33,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.files.entities.BookData;
-import com.files.entities.BookDataDao;
-import com.files.entities.Data;
-import com.files.entities.Datadao;
-import com.files.entities.TourPackage;
-
 @Controller
-@RequestMapping("/")
+//@RequestMapping("/")
 public class MainController {
 
     @Autowired

@@ -12,7 +12,7 @@
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- Enable component scanning for both controller and entities packages -->
-    <context:component-scan base-package="com.files.controller, com.files.entities" />
+    <context:component-scan base-package="com.files.entities" />
     
     <!-- Enable Spring MVC annotation-driven configuration -->
     <mvc:annotation-driven />

@@ -3,40 +3,39 @@ package com.files.entities;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import javax.persistence.Entity;
 
 @Entity
 @Table(name = "BOOKING")
 public class BookData implements Serializable{
-	
+
 		@Id
 	    @Column(name = "PHONE", nullable = false)
 		long Phone;
-	
+
 		@Column(name = "DESTINATION")
 		String Destination;
-		
+
 		@Column(name = "WHEREFROM")
 		String From;
-		
+
 		@Column(name = "GUESTS")
 		int Guests;
-		
+
 
 		@Column(name = "ARRIVAL")
 		String Arrival;
-		
+
 		@Column(name = "LEAVING")
 		String Leaving;
-		
+
 		@Column(name = "BOOKINGTIME")
 		String booking_Time;
-		
-		
-		
+
+
+
 		public String getDestination() {
 			return Destination;
 		}
@@ -79,6 +78,6 @@ public class BookData implements Serializable{
 		public void setBooking_Time(String booking_Time) {
 			this.booking_Time = booking_Time;
 		}
-		
-		
+
+
 }

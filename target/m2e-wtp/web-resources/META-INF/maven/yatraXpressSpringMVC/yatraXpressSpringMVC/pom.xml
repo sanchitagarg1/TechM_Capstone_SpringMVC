@@ -26,6 +26,7 @@
 	  <artifactId>spring-core</artifactId>
 	  <version>5.3.5</version>
 	</dependency>
+
 	
 	<dependency>
 	  <groupId>org.springframework</groupId>
@@ -33,7 +34,13 @@
 	  <version>5.3.5</version>
 	</dependency>
 	
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-tx</artifactId>
+    	<version>5.2.25.RELEASE</version> 
+	</dependency>
     
+
      <dependency>  
 	    <groupId>org.springframework</groupId>  
 	    <artifactId>spring-jdbc</artifactId>  
@@ -47,13 +54,22 @@
         <version>5.3.10</version>
     </dependency>-->  
     
+    
         <!-- Spring Test -->
+        
+
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
         <version>5.3.10</version>
         <scope>test</scope>
     </dependency>
+    
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>5.3.10</version>
+ 	</dependency>
     
     <dependency>
         <groupId>org.springframework</groupId>

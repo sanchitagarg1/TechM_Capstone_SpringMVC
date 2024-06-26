@@ -3,39 +3,38 @@ package com.files.entities;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import javax.persistence.Entity;
 
 @Entity
 @Table(name = "TOURDATA")
 public class Data implements Serializable
 {
-	
-	
+
+
 	@Id
     @Column(name = "PHONE")
 	long phone;
 
 	 @Column(name = "NAME")
 	String name;
-	 
+
 	 @Column(name = "EMAIL")
 	String email;
-	 
+
 	 @Column(name = "PASSWORD")
 	String password;
-	 
+
 	 @Column(name = "ADDRESS")
 	String address;
-	 
+
 	 @Column(name = "ROLE")
 	String role;
-	 
+
 	 @Column(name = "IMAGEFILENAME")
 	String imageFileName;
-	
+
 	public String getImageFileName() {
 		return imageFileName;
 	}
