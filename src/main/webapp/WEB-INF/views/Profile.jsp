@@ -179,12 +179,7 @@
 <body>
 <%
 		String name = (String) session.getAttribute("name");
-		if(name.isBlank())
-		{
-			
-		}
-		else
-		{
+		
 %> 
     <div class="container">
         <nav class="nav">
@@ -214,9 +209,7 @@
             <div class="btn"><a href="">Contact Us</a></div>
         </div>
     </div>
-    	<% 
-		}
-	%>
+    
 </body>
 
 </html>

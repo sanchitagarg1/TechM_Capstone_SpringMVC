@@ -28,7 +28,7 @@
   </listener>
 
   <welcome-file-list>
-    <welcome-file>Main.jsp</welcome-file>
+    <welcome-file>/TechM_Capstone_SpringMVC/src/main/webapp/WEB-INF/views/Main.jsp</welcome-file>
   </welcome-file-list>
   
 </web-app>

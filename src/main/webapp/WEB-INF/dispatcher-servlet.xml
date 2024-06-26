@@ -16,6 +16,10 @@
     
     <!-- Enable Spring MVC annotation-driven configuration -->
     <mvc:annotation-driven />
+    
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+
+    
 
     <!-- Configure the View Resolver to resolve JSP views -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

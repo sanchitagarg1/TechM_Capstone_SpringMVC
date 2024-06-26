@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,8 @@
 	<title>Main Page</title>
 	<meta name="viewport" content="width-device-width, initial-scale=1"/>
 
-   <link rel="stylesheet" href="./Style/Style.css">
+ <link rel="stylesheet" href="<c:url value='/resources/Style/Style.css' />">
+
    
 </head>
 <body>
@@ -18,7 +20,7 @@
 
         <i class="fas fa-times" id="form-close"></i>
 
-        <form action="/login" method="post">
+        <form action="<c:url value='/login' />" method="post">
 		    <h3>Login</h3>
 		    <input type="email" class="box" placeholder="enter your email" name="inemail" required>
 		    <input type="password" class="box" placeholder="enter your password" name="inpassword" required>

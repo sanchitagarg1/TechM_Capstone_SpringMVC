@@ -3,18 +3,13 @@ package com.files.controller;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 
@@ -26,13 +21,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,11 +32,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.files.entites.BookData;
-import com.files.entites.BookDataDao;
-import com.files.entites.Data;
-import com.files.entites.Datadao;
-import com.files.entites.TourPackage;
+import com.files.entities.BookData;
+import com.files.entities.BookDataDao;
+import com.files.entities.Data;
+import com.files.entities.Datadao;
+import com.files.entities.TourPackage;
 
 @Controller
 @RequestMapping("/")
@@ -63,7 +52,7 @@ public class MainController {
     public String index(Model model) {
         List<TourPackage> tourPackages = getTourPackagesFromDatabase();
         model.addAttribute("tourPackages", tourPackages);
-        return "Index";
+        return "Main";
     }
 
 //    @PostMapping("/register")
