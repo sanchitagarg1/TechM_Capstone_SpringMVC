@@ -480,7 +480,7 @@
 
             </div>
             <div class="" id="box1">
-                <img src="./Images/Adminimageback.jpg" alt="img">
+                <img src="/resources/Images/Adminimageback.jpg" alt="img">
                 <h1 class="text">Welcome Admin : <%=session.getAttribute("name")%>
                 </h1>
                 <input type="hidden" name="inemail" value="<%=session.getAttribute("email") %>"></input>
@@ -655,7 +655,7 @@ List<BookData> records = dao.getRecords(offset, total);
                         </form>
                     </div>
         </div>
-        <script src="./Script/script1.js"></script>
+        <script src="/resources/Script/script1.js"></script>
         <% } %>
 </body>
 </html>

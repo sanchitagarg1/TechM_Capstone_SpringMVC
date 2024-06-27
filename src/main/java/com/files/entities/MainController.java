@@ -105,28 +105,47 @@ public class MainController {
     }
 
     @PostMapping("/login")
-    public String loginUser(@RequestParam("inemail") String email, @RequestParam("inpassword") String password,
-            HttpSession session, Model model) {
+    public String loginUser(@RequestParam("inemail") String email,
+                            @RequestParam("inpassword") String password,
+                            HttpSession session,
+                            Model model) {
         Data user = datadao.checklogin(email, password);
+
         if (user != null) {
             session.setAttribute("name", user.getName());
             session.setAttribute("email", user.getEmail());
+
             if ("Admin".equals(user.getRole())) {
-                List<BookData> bookRecords = getBookRecordsFromDatabase();
-                List<Data> record = getRecordsFromDatabase();
+            	System.out.println("Role : " + user.getRole());
+            	System.out.println("Admin welcome");
+                int pages = 1;
+                int total = 7;
+                int offset = (pages > 1) ? (pages - 1) * total : 0;
+
+                List<BookData> bookRecords = bookDataDao.getRecords(offset, total);
                 session.setAttribute("bookRecords", bookRecords);
+
+                int pg = 1;
+                int total1 = 8;
+                int recordOffset = (pg == 1) ? 0 : (pg - 1) * total1;
+
+                List<Data> record = datadao.getRecords(recordOffset, total1);
                 session.setAttribute("record", record);
+
                 return "AdminProfile";
             } else {
                 model.addAttribute("name", user.getName());
                 model.addAttribute("email", user.getEmail());
                 model.addAttribute("imageFileName", user.getImageFileName());
+
                 return "Index";
             }
         } else {
             return "wrong";
         }
     }
+
+
 
     @PostMapping("/forgot-password")
     public String forgotPassword(@RequestParam("email") String email, @RequestParam("pass") String pass,
@@ -158,7 +177,7 @@ public class MainController {
 
     @PostMapping("/update-profile")
     public String updateProfile(@ModelAttribute Data user, Model model) {
-        int status = datadao.updaterecord(user);
+        int status = datadao.updateRecord(user);
         if (status == 1) {
             model.addAttribute("message", "Profile updated successfully!");
             return "AdminProfile";

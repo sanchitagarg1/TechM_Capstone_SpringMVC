@@ -2,34 +2,36 @@ package com.files.entities;
 
 import java.util.List;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class BookDataDao {
 
-    @Autowired
-    private SessionFactory sessionFactory;
+    private HibernateTemplate hibernateTemplate;
 
-    @Transactional(readOnly = true)
-    public List<BookData> getRecords(int start, int total) {
-        Session session = sessionFactory.getCurrentSession();
-        String hql = "FROM BookData ORDER BY booking_Time DESC";
-        Query<BookData> query = session.createQuery(hql, BookData.class);
-        query.setFirstResult(start - 1);
-        query.setMaxResults(total);
-        return query.list();
+    @Autowired
+    public BookDataDao(HibernateTemplate hibernateTemplate) {
+        this.hibernateTemplate = hibernateTemplate;
     }
 
-    @Transactional(readOnly = true)
+    public List<BookData> getRecords(int start, int total) {
+        String hql = "FROM BookData ORDER BY booking_Time DESC";
+        return hibernateTemplate.execute(session -> {
+            return session.createQuery(hql, BookData.class)
+                          .setFirstResult(start)
+                          .setMaxResults(total)
+                          .list();
+        });
+    }
+
     public int countRecords() {
-        Session session = sessionFactory.getCurrentSession();
         String hql = "SELECT COUNT(*) FROM BookData";
-        Query<Long> query = session.createQuery(hql, Long.class);
-        return query.uniqueResult().intValue();
+        return hibernateTemplate.execute(session -> {
+            return session.createQuery(hql, Long.class)
+                          .uniqueResult()
+                          .intValue();
+        });
     }
 }
