@@ -1,6 +1,8 @@
 <%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="com.files.entities.BookDataDao"%>
 <%@page import="com.files.entities.BookData"%>
 <%@page import="com.files.entities.Data"%>
@@ -655,7 +657,7 @@ List<BookData> records = dao.getRecords(offset, total);
                         </form>
                     </div>
         </div>
-        <script src="/resources/Script/script1.js"></script>
+        <script src="<c:url value='/resources/Script/script1.js' />"></script>
         <% } %>
 </body>
 </html>
