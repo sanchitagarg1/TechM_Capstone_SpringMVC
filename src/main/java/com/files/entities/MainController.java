@@ -50,28 +50,59 @@ public class MainController {
         return "Main";
     }
 
-//    @PostMapping("/register")
-//    public String registerUser(@ModelAttribute Data da, @RequestParam("pass1") String pass1,
-//            @RequestParam("otp") String myotp, Model model) {
-//        if (myotp.equals(da.getOtp())) {
-//            if (da.getPassword().equals(pass1)) {
-//                int status = datadao.insertRecord(da);
-//                if (status == 1) {
-//                    model.addAttribute("message", "Registered Successfully! You can now login.");
-//                    return "Main";
-//                } else {
-//                    model.addAttribute("error", "Unable to Register. Please try again.");
-//                    return "Register";
-//                }
-//            } else {
-//                model.addAttribute("error", "Password and Confirm Password do not match.");
-//                return "Register";
-//            }
-//        } else {
-//            model.addAttribute("error", "Invalid OTP.");
-//            return "Register";
-//        }
-//    }
+    @GetMapping("/register")
+    public String showRegisterPage() {
+        return "Register"; 
+    }
+    
+    @PostMapping("/otpVerify")
+    public String showOtpVerifyPage() {
+        return "OTPverify"; 
+    }
+
+    @PostMapping("/registerServlet")
+    public String registerServlet(
+            @RequestParam("name") String name,
+            @RequestParam("email") String email,
+            @RequestParam("phone") Long phone,
+            @RequestParam("address") String address,
+            @RequestParam("role") String role,
+            @RequestParam("pass") String pass,
+            @RequestParam("pass1") String pass1,
+            @RequestParam("otp") String otp,
+            @RequestParam("myotp") String myotp,
+            Model model) {
+
+        Data data = new Data();
+        data.setName(name);
+        data.setEmail(email);
+        data.setPhone(phone);
+        data.setAddress(address);
+        data.setRole(role);
+
+        if (myotp.equals(otp)) {
+            model.addAttribute("otpMessage", "OTP verified!");
+
+            if (pass.equals(pass1)) {
+                data.setPassword(pass);
+                int status = datadao.insertRecord(data);
+
+                if (status == 1) {
+                    model.addAttribute("message", "Updated Successfully! You can now login.");
+                    return "Main";
+                } else {
+                    model.addAttribute("message", "Unable to Register. Please try again!");
+                    return "Register";
+                }
+            } else {
+                model.addAttribute("message", "Password and repassword didn't match.");
+                return "Register";
+            }
+        } else {
+            model.addAttribute("otpMessage", "Invalid OTP.");
+            return "Register";
+        }
+    }
 
     @PostMapping("/login")
     public String loginUser(@RequestParam("inemail") String email, @RequestParam("inpassword") String password,

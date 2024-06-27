@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,11 +135,12 @@
 </head>
 <body>
     <div class="container">
-        <div class="imgbox">
-            <img src="./Images/registerimg.jpg" alt="">
-        </div>
+<div class="imgbox">
+    <img src="<c:url value='/resources/Images/registerimg.jpg' />" alt="">
+</div>
+
         
-         <form action="MainController" method="POST">
+         <form action="<c:url value='/otpVerify' />" method="POST">
              <div class="inputbox">
                  <input type="text" name="name" placeholder="Name" required>
                  <input type="email" name="email" placeholder="Email address" required>

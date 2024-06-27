@@ -28,7 +28,7 @@
 		    <input type="checkbox" name="" id="remember">
 		    <label for="remember">remember me</label>
 		    <p>Forget password? <a href="Forget.jsp">Click Here</a></p>
-		    <p>Don't have an account? <a href="<c:url value='/Register.jsp' />">Register Account</a></p>
+		    <p>Don't have an account? <a href="<c:url value='/register' />">Register Account</a></p>
 		</form>
 
     </div>
