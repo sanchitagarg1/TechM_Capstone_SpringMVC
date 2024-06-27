@@ -482,7 +482,7 @@
 
             </div>
             <div class="" id="box1">
-                <img src="/resources/Images/Adminimageback.jpg" alt="img">
+                <img src="<c:url value='/resources/Images/Adminimageback.jpg' />" alt="img">
                 <h1 class="text">Welcome Admin : <%=session.getAttribute("name")%>
                 </h1>
                 <input type="hidden" name="inemail" value="<%=session.getAttribute("email") %>"></input>

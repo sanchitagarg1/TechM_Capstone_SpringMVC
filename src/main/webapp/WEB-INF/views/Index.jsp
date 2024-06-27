@@ -16,7 +16,7 @@
 
     <!-- Custom Css file link  -->
     <link rel="stylesheet" href="<c:url value='/resources/Style/Style.css' />">
-    <link rel="shortcut icon" href="/resources/Images/T logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="<c:url value='/resources/Images/T logo.jpg' />" type="image/x-icon">
     
     <link
   rel="stylesheet"
@@ -32,7 +32,7 @@
 
        <!--   <a href="#" class="logo"><span>T</span>ravel</a>-->
        
-     <a href="#" class="logo"><img src="/resources/Images/logo-1.png"></a>
+     <a href="#" class="logo"><img src="<c:url value='/resources/Images/logo-1.png' />"></a>
 
         <nav class="navbar">
             <a href="#home">Home</a>
@@ -99,15 +99,15 @@
     </div>
 
     <div class="controls">
-        <span class="vid-btn active" data-src="/resources/Images/vid6.mp4"></span>
-        <span class="vid-btn" data-src="/resources/Images/vid4.mp4"></span>
-        <span class="vid-btn" data-src="/resources/Images/vid3.mp4"></span>
-        <span class="vid-btn" data-src="/resources/Images/vid5.mp4"></span>
-        <span class="vid-btn" data-src="/resources/Images/vid1.mp4"></span>
+        <span class="vid-btn active" data-src="<c:url value='/resources/Images/vid6.mp4' />"></span>
+        <span class="vid-btn" data-src="<c:url value='/resources/Images/vid4.mp4' />"></span>
+        <span class="vid-btn" data-src="<c:url value='/resources/Images/vid3.mp4' />"></span>
+        <span class="vid-btn" data-src="<c:url value='/resources/Images/vid5.mp4' />"></span>
+        <span class="vid-btn" data-src="<c:url value='/resources/Images/vid1.mp4' />"></span>
     </div>
 
     <div class="video-container">
-        <video src="/resources/Images/vid6.mp4" id="video-slider" loop autoplay muted></video>
+        <video src="<c:url value='/resources/Images/vid6.mp4' />" id="video-slider" loop autoplay muted></video>
     </div>
 
 </section>
@@ -133,7 +133,7 @@
         <div class="row">
 
             <div class="image">
-                <img src="/resources/Images/Book-img.png" alt="img">
+                <img src="<c:url value='/resources/Images/Book-img.png' />" alt="img">
             </div>
 
             <form action="BookServlet" method="post">
@@ -196,7 +196,7 @@
         <div class="box-container">
 
             <div class="box">
-		    <img src="/resources/Images/p1.jpg" alt="img">
+		    <img src="<c:url value='/resources/Images/p1.jpg' />" alt="img">
 		    <div class="content">
 		        <table border="1">
 		            <tbody>
@@ -255,7 +255,7 @@
 
 
             <div class="box">
-                <img src="/resources/Images/p7.jpg" alt="img">
+                <img src="<c:url value='/resources/Images/p7.jpg' />" alt="img">
                 <div class="content">
                     <h3><i class="fas fa-map-marker-alt"></i>mumbai</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, nostrum.</p>
@@ -272,7 +272,7 @@
             </div>
 
             <div class="box">
-                <img src="/resources/Images/p1.jpg" alt="img">
+                <img src="<c:url value='/resources/Images/p1.jpg' />" alt="img">
                 <div class="content">
                     <h3><i class="fas fa-map-marker-alt"></i>sydeny</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, nostrum.</p>
@@ -288,7 +288,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="/resources/Images/p2.jpg" alt="img">
+                <img src="<c:url value='/resources/Images/p2.jpg' />" alt="img">
                 <div class="content">
                     <h3><i class="fas fa-map-marker-alt"></i>hawaii</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, nostrum.</p>
@@ -304,7 +304,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="/resources/Images/p3.jpg" alt="img">
+                <img src="<c:url value='/resources/Images/p3.jpg' />" alt="img">
                 <div class="content">
                     <h3><i class="fas fa-map-marker-alt"></i>paris</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, nostrum.</p>
@@ -320,7 +320,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="/resources/Images/p4.jpg" alt="img">
+                <img src="<c:url value='/resources/Images/p4.jpg' />" alt="img">
                 <div class="content">
                     <h3><i class="fas fa-map-marker-alt"></i>Bhutan</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, nostrum.</p>
@@ -336,7 +336,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="/resources/Images/p6.jpg" alt="img">
+                <img src="<c:url value='/resources/Images/p6.jpg' />" alt="img">
                 <div class="content">
                     <h3><i class="fas fa-map-marker-alt"></i>Amazon</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, nostrum.</p>
@@ -443,7 +443,7 @@
             <div class="wrapper">
                 <div class="swiper-slide">
                     <div class="box">
-                        <img src="/resources/Images/pic1.png" alt="img">
+                        <img src="<c:url value='/resources/Images/pic1.png' />" alt="img">
                         <h3>john deo</h3>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit ea perferendis iste,
                              repellat perspiciatis repellendus quaerat quia temporibus aspernatur dignissimos,
@@ -459,7 +459,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="box">
-                        <img src="/resources/Images/pic2.webp" alt="img">
+                        <img src="<c:url value='/resources/Images/pic2.webp' />" alt="img">
                         <h3>john deo</h3>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit ea perferendis iste,
                              repellat perspiciatis repellendus quaerat quia temporibus aspernatur dignissimos,
@@ -475,7 +475,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="box">
-                        <img src="/resources/Images/pic3.jpg" alt="img">
+                        <img src="<c:url value='/resources/Images/pic3.jpg' />" alt="img">
                         <h3>john deo</h3>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit ea perferendis iste,
                              repellat perspiciatis repellendus quaerat quia temporibus aspernatur dignissimos,
@@ -491,7 +491,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="box">
-                        <img src="/resources/Images/pic4.jpg" alt="img">
+                        <img src="<c:url value='/resources/Images/pic4.jpg' />" alt="img">
                         <h3>john deo</h3>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit ea perferendis iste,
                              repellat perspiciatis repellendus quaerat quia temporibus aspernatur dignissimos,
@@ -531,7 +531,7 @@
         <div class="row">
 
             <div class="image">
-                <img src="/resources/Images/Contactimg.png" alt="">
+                <img src="<c:url value='/resources/Images/Contactimg.png' />" alt="">
             </div>
             <form action="MailServlet" method="Post">
                 <div class="inputbox">
@@ -575,7 +575,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- custom js file link  -->
-    <script src="/resources/Script/script.js"></script>
+    <script src="<c:url value='/resources/Script/script.js' />"></script>
     <script>
    history.pushState(null,null,location.href);
    window.onpopstate=function(){
